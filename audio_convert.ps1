@@ -72,7 +72,7 @@ $Inputfiles | ForEach {
         {
             # -q:a 3 is VBR at a target of 175kbit/s, see https://trac.ffmpeg.org/wiki/Encode/MP3
             $OutputExtension = ".mp3"
-            &$FFMpegPath -i "$FullPath" -c:a libmp3lame -c:v copy -q:a 3 "$NewPath\$FileName$OutputExtension" -y -hide_banner -loglevel error
+            &$FFMpegPath -i "$FullPath" -c:a libmp3lame -c:v copy -q:a 3 "$OutputFilePath$OutputExtension" -y -hide_banner -loglevel error
             break
         }
     }
